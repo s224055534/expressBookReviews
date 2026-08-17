@@ -17,7 +17,7 @@ if (!req.session.authorization) {
         message: "User not logged in"
     });
 }
-const token = req.session.authorization.accessTokem;
+const token = req.session.authorization.accessToken;
 
 jwt.verify(token, "access", (err, decoded) => {
     if(err) {
